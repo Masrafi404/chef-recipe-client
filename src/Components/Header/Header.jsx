@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom';
 import './Header.css'
 
 const Header = () => {
+    const logOut = () => {
+
+    }
     return (
-        <div className='header-container'>
+        <div className=''>
             <nav className="navbar navbar-expand-lg bg-black">
                 <div className="container-fluid container">
                     <Link className="navbar-brand" to="/"><img src="https://dtkudil.wpenginepowered.com/wp-content/themes/kudil/images/light-logo.png" alt="" /></Link>
@@ -29,7 +32,8 @@ const Header = () => {
                         </ul>
                         <span className="navbar-text text-white">
                             <Link to="signUp" className='hover btn bg-white me-3'>Sign In</Link>
-                            <Link to="logIn" className='hover btn bg-white'>Login</Link>
+                            <Link to="logIn" className='hover btn bg-white me-3'>Login</Link>
+                            <Link onClick={logOut} className='hover btn bg-white'>Log Out</Link>
                         </span>
                     </div>
                 </div>
