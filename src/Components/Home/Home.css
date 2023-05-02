@@ -43,6 +43,7 @@
      }
  }
 
+
  .text-box h3 {
      font-size: 40px;
      font-weight: 500;
@@ -55,4 +56,27 @@
 
  .explore-btn:hover {
      background-color: rgba(0, 0, 0.5);
+ }
+
+ .uses {
+     text-decoration: none;
+     color: #fff;
+ }
+
+ @media only screen and (max-width:672px) {
+     .text-box h1 {
+         font-size: 100px;
+         line-height: 60px;
+     }
+
+     .text-box p {
+         font-size: 30px;
+         font-weight: 300;
+     }
+
+     .text-box h3 {
+         margin-top: 20px;
+         font-size: 40px;
+         font-weight: 400;
+     }
  }

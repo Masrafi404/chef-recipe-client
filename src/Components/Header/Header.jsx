@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css'
 import { AuthContext } from '../Provider/AuthProvider';
+import ActiveLink from '../ActiveLink/ActiveLink';
 
 const Header = () => {
 
@@ -22,16 +23,16 @@ const Header = () => {
                     <div className="collapse navbar-collapse" id="navbarText">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0 mx-auto gap-3">
                             <li className="nav-item">
-                                <Link className="nav-link active text-white" aria-current="page" to="/">Home</Link>
+                                <ActiveLink className="" to="/">Home</ActiveLink>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link active text-white" aria-current="page" to="/recipe">Recipe</Link>
+                                <ActiveLink className="" to="/recipe">Recipe</ActiveLink>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link active text-white" aria-current="page" to="/blog">Blog</Link>
+                                <ActiveLink className="" to="/blog">Blog</ActiveLink>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link active text-white" aria-current="page" to="/contact">contact</Link>
+                                <ActiveLink className="" to="/contact">contact</ActiveLink>
                             </li>
 
                         </ul>
