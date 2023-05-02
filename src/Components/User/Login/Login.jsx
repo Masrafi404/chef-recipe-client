@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const navigate = useNavigate()
-    const { logInUser } = useContext(AuthContext)
+    const { logInUser, googleSignIn, githubSignIn } = useContext(AuthContext)
     const [error, setError] = useState('')
     const loginSubmitHandler = (e) => {
         e.preventDefault()
@@ -21,6 +21,26 @@ const Login = () => {
                 const errorMassage = error.message
                 setError(errorMassage)
             })
+
+    }
+    const googleSignin = () => {
+        googleSignIn()
+            .then(result => {
+                console.log(result.user)
+                navigate('/')
+            })
+            .catch(error => {
+                setError(error.message)
+            })
+    }
+    const githubeSignin = () => {
+        githubSignIn()
+            .then(() => {
+                navigate('/')
+            })
+            .catch(error => {
+                setError(error.message)
+            })
     }
     return (
         <div className='mt-5'>
@@ -34,6 +54,15 @@ const Login = () => {
                     } <br />
                     <span>
                         <input className='btn bg-white text-black mb-5' type="submit" value="Login" />
+                        <div onClick={googleSignin} className='btn d-flex bg-white align-items-center signUpGoogle mx-auto'>
+                            <img className='sign ' src="https://cdn-icons-png.flaticon.com/512/2504/2504739.png" alt="" />
+                            <strong>Sign in with Google</strong>
+                        </div>
+                        <div onClick={githubeSignin} className='mb-5 btn d-flex bg-white align-items-center mt-4 signUpGithub mx-auto'>
+                            <img className='sign ' src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="" />
+                            <strong>Sign in with Github</strong>
+
+                        </div>
                     </span>
                 </form>
             </div >

@@ -7,7 +7,7 @@ const SignUp = () => {
     const navigate = useNavigate()
     const [error, setError] = useState('')
     const [errorSign, setErrorSign] = useState('')
-    const { createUser, googleSignIn, githubSignIn, update } = useContext(AuthContext)
+    const { createUser, googleSignUp, githubSignUp } = useContext(AuthContext)
     const signUpSubmitHandler = (e) => {
         e.preventDefault()
         const name = e.target.name.value;
@@ -46,18 +46,10 @@ const SignUp = () => {
                 const errorMassage = error.message;
                 setErrorSign(errorMassage)
             })
-        update(name, img)
-            .then(() => {
-                console.log('user updated')
-            })
-            .catch(error => {
-                console.log(error.message)
-            })
-
     }
 
     const googleSignInHandler = () => {
-        googleSignIn()
+        googleSignUp()
             .then(result => {
                 const user = result.user
                 console.log(user)
@@ -69,7 +61,7 @@ const SignUp = () => {
             })
     }
     const githubSignInHandler = () => {
-        githubSignIn()
+        githubSignUp()
             .then(result => {
                 const user = result.user
                 navigate('/')
@@ -87,6 +79,7 @@ const SignUp = () => {
                     <input name='name' className='input-field ps-3' type="text" placeholder='User Name' required /><br />
                     <input name='email' className='input-field ps-3' type="email" placeholder='Email' required /><br />
                     <input name='password' className='input-field ps-3' type="password" placeholder='Password' required /><br />
+
                     <input name='confirmPassword' className='input-field ps-3' type="password" placeholder='Confirm Password' required /><br />
                     <input name='image' className='input-field ps-3' type="text" placeholder=' image Url' required /> <br />
                     {
@@ -97,7 +90,7 @@ const SignUp = () => {
                         errorSign && <small className='text-white'>{errorSign}</small>
                     }
 
-                    <div onClick={googleSignInHandler} className='btn d-flex bg-white align-items-center signUpGoogle mx-auto'>
+                    <div onClick={googleSignInHandler} className='btn d-flex bg-white align-items-center mt-3 signUpGoogle mx-auto'>
                         <img className='sign ' src="https://cdn-icons-png.flaticon.com/512/2504/2504739.png" alt="" />
                         <strong>Sign up with Google</strong>
                     </div>

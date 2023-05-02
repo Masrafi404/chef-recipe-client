@@ -17,17 +17,17 @@ const AuthProvider = ({ children }) => {
     const logOut = () => {
         return signOut(auth)
     }
+    const googleSignUp = () => {
+        return signInWithPopup(auth, googleProvider)
+    }
+    const githubSignUp = () => {
+        return signInWithPopup(auth, githubProvider)
+    }
     const googleSignIn = () => {
         return signInWithPopup(auth, googleProvider)
     }
     const githubSignIn = () => {
         return signInWithPopup(auth, githubProvider)
-    }
-    const update = (name, img) => {
-        return updateProfile(user, {
-            displayName: name,
-            imageURL: img
-        })
     }
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
@@ -44,9 +44,10 @@ const AuthProvider = ({ children }) => {
         createUser,
         logInUser,
         logOut,
+        googleSignUp,
+        githubSignUp,
         googleSignIn,
-        githubSignIn,
-        update
+        githubSignIn
     }
     return (
         <AuthContext.Provider value={users}>
