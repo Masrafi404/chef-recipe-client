@@ -12,6 +12,7 @@ import Contact from './Components/Contact/Contact.jsx';
 import SignUp from './Components/User/SignUp/SignUp.jsx';
 import Login from './Components/User/Login/Login.jsx';
 import AuthProvider from './Components/Provider/AuthProvider.jsx';
+import ErrorPage from './Components/ErrorPage/ErrorPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: '/logIn',
         element: <Login></Login>
+      },
+      {
+        path: '*',
+        element: <ErrorPage></ErrorPage>
       }
     ]
   },

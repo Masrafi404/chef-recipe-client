@@ -1,0 +1,31 @@
+.p {
+    font-size: 28px;
+    color: #121212;
+}
+
+.error-container {
+    width: 100%;
+    height: auto;
+    margin-top: 15% !important;
+    margin-bottom: 15% !important;
+}
+
+.go {
+    background-color: black;
+    color: white;
+}
+
+.back {
+    background-color: black;
+    color: white;
+}
+
+.go:hover {
+    background-color: rgb(0, 0, 0.5);
+    color: white;
+}
+
+.back:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}

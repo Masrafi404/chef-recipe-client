@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { AuthContext } from '../../Provider/AuthProvider';
+import { AuthContext } from '../../Provider/AuthProvider';;
 
 const Login = () => {
     const { logInUser } = useContext(AuthContext)
@@ -26,7 +26,9 @@ const Login = () => {
                     <h4 className=' mt-5 mb-3 text-white'>Please Login</h4>
                     <input name='email' className='input-field ps-3' type="email" placeholder='Email' required /><br />
                     <input name='password' className='input-field ps-3' type="password" placeholder='Password' required /><br />
-                    <input className='btn bg-white text-black mb-5' type="submit" value="Login" />
+                    <span>
+                        <input className='btn bg-white text-black mb-5' type="submit" value="Login" />
+                    </span>
                 </form>
             </div >
         </div>
