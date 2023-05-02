@@ -7,6 +7,7 @@ const SignUp = () => {
     const navigate = useNavigate()
     const [error, setError] = useState('')
     const [errorSign, setErrorSign] = useState('')
+    const [show, setShow] = useState(false)
     const { createUser, googleSignUp, githubSignUp } = useContext(AuthContext)
     const signUpSubmitHandler = (e) => {
         e.preventDefault()
@@ -73,19 +74,32 @@ const SignUp = () => {
     }
     return (
         <div className="body">
-            <div className='mt-5 text-center signup-container'>
+            <div className='mt-5 signup-container'>
                 <form onSubmit={signUpSubmitHandler} className="signup-header">
-                    <h4 className=' mt-5 mb-3 text-white'>Please Register</h4>
-                    <input name='name' className='input-field ps-3' type="text" placeholder='User Name' required /><br />
-                    <input name='email' className='input-field ps-3' type="email" placeholder='Email' required /><br />
-                    <input name='password' className='input-field ps-3' type="password" placeholder='Password' required /><br />
-
-                    <input name='confirmPassword' className='input-field ps-3' type="password" placeholder='Confirm Password' required /><br />
-                    <input name='image' className='input-field ps-3' type="text" placeholder=' image Url' required /> <br />
+                    <h4 className=' mt-5 mb-3 text-white text-center'>Please Register</h4>
+                    <div className="text-center">
+                        <input name='name' className='input-field ps-3' type="text" placeholder='User Name' required /></div><br />
+                    <div className="text-center">
+                        <input name='email' className='input-field ps-3' type="email" placeholder='Email' required /></div><br />
+                    <div className="text-center">
+                        <input name='password' className='input-field-pass ps-3 mb-0' type={show ? "text" : "password"} placeholder='Password' required /></div><br />
+                    <p className='mt-0 ms-5'>
+                        <small className='text-white'>
+                            {show ?
+                                <span className='ms-3'><input onClick={() => setShow(!show)} type="checkbox" name="" id="" /> Hide Password</span> :
+                                <span className='ms-3'><input onClick={() => setShow(!show)} type="checkbox" name="" id="" /> Show password</span>}
+                        </small>
+                    </p>
+                    <div className="text-center">
+                        <input name='confirmPassword' className='input-field ps-3' type={show ? "text" : "password"} placeholder='Confirm Password' required /></div><br />
+                    <div className="text-center">
+                        <input name='image' className='input-field ps-3' type="text" placeholder=' image Url' required /></div> <br />
                     {
                         error && <small className='text-white'>{error}</small>
                     } <br />
-                    <input className='btn bg-white text-black mb-4 mt-2' type="submit" value="Register" /> <br />
+                    <div className="text-center">
+                        <input className='btn bg-white text-black mb-4 mt-2' type="submit" value="Register" />
+                    </div><br />
                     {
                         errorSign && <small className='text-white'>{errorSign}</small>
                     }
