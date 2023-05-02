@@ -1,0 +1,21 @@
+.blog-container {
+    display: flex;
+    justify-content: space-around;
+    margin-left: auto;
+}
+
+.blog-container img {
+    width: 500px;
+    height: 500px;
+}
+
+@media only screen and (max-width:1000px) {
+    .blog-container {
+        flex-direction: column-reverse;
+    }
+
+    .blog-container img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
