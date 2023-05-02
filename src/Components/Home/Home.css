@@ -1,0 +1,58 @@
+ .imag-slid {
+     width: 80%;
+     height: 450px;
+     margin-left: auto;
+     margin-right: auto;
+     margin-top: 40px;
+ }
+
+ .header-container {
+     width: 100%;
+     height: 100vh;
+     background-image: linear-gradient(rgba(0, 0, 0, 0.3), transparent), url(https://i.pinimg.com/736x/fa/e9/aa/fae9aa88452a6d1c1459526098ee13dc.jpg);
+     background-repeat: no-repeat;
+     background-size: cover;
+ }
+
+ .text-box {
+     color: #fff;
+     position: absolute;
+     bottom: 8%;
+ }
+
+ .text-box p {
+     font-size: 50px;
+     font-weight: 600;
+ }
+
+ .text-box h1 {
+     font-size: 180px;
+     line-height: 160px;
+     margin-left: -10px;
+     color: transparent;
+     -webkit-text-stroke: 1px #fff;
+     background: url(https://i.ibb.co/3R3Tk7p/back.png);
+     -webkit-background-clip: text;
+     background-position: 0 0;
+     animation: back 20s linear infinite;
+ }
+
+ @keyframes back {
+     100% {
+         background-position: 2000px 0;
+     }
+ }
+
+ .text-box h3 {
+     font-size: 40px;
+     font-weight: 500;
+ }
+
+ .explore-btn {
+     color: #fff;
+     background-color: rgba(0, 0, 0, 0.3);
+ }
+
+ .explore-btn:hover {
+     background-color: rgba(0, 0, 0.5);
+ }
