@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const navigate = useNavigate()
@@ -14,7 +14,6 @@ const Login = () => {
         logInUser(email, password)
             .then((logIn) => {
                 const user = logIn.user
-                console.log(user)
                 e.target.reset()
                 navigate('/')
             })
@@ -27,7 +26,6 @@ const Login = () => {
     const googleSignin = () => {
         googleSignIn()
             .then(result => {
-                console.log(result.user)
                 navigate('/')
             })
             .catch(error => {
@@ -63,7 +61,10 @@ const Login = () => {
                     } <br />
                     <span>
                         <div className="text-center">
-                            <input className='btn bg-white text-black mb-5 mt-3' type="submit" value="Login" />
+                            <input className='btn bg-white text-black mb-2 mt-3' type="submit" value="Login" /> <br />
+                            <div className="d-flex ms-4">
+                                <p className='text-white ms-5 mb-5'>Kudil New? <Link to="/signUp">Create An Account</Link></p>
+                            </div>
                         </div>
                         <div onClick={googleSignin} className='btn d-flex bg-white align-items-center signUpGoogle mx-auto'>
                             <img className='sign ' src="https://cdn-icons-png.flaticon.com/512/2504/2504739.png" alt="" />

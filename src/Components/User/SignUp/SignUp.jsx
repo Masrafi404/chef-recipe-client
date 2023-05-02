@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import './SignUp.css'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
     const navigate = useNavigate()
@@ -39,7 +39,6 @@ const SignUp = () => {
         createUser(email, password)
             .then((signinUser) => {
                 const user = signinUser.user
-                console.log(user)
                 e.target.reset()
                 navigate('/')
             })
@@ -53,7 +52,6 @@ const SignUp = () => {
         googleSignUp()
             .then(result => {
                 const user = result.user
-                console.log(user)
                 navigate('/')
             })
             .catch(error => {
@@ -98,8 +96,12 @@ const SignUp = () => {
                         error && <small className='text-white'>{error}</small>
                     } <br />
                     <div className="text-center">
-                        <input className='btn bg-white text-black mb-4 mt-2' type="submit" value="Register" />
+                        <input className='btn bg-white text-black mt-2' type="submit" value="Register" />
+
                     </div><br />
+                    <div className="d-flex ms-4">
+                        <p className='text-white ms-5'>Already Account <Link to="/logIn">Login</Link></p>
+                    </div>
                     {
                         errorSign && <small className='text-white'>{errorSign}</small>
                     }
