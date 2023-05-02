@@ -11,6 +11,7 @@ const Login = () => {
             .then((logIn) => {
                 const user = logIn.user
                 console.log(user)
+                e.target.reset()
             })
             .catch((error) => {
                 const errorMassage = error.massage
@@ -19,8 +20,8 @@ const Login = () => {
             })
     }
     return (
-        <div>
-            <div className='text-center signup-container'>
+        <div className='mt-5'>
+            <div className='body text-center signup-container'>
                 <form onSubmit={loginSubmitHandler} className="signup-header">
                     <h4 className=' mt-5 mb-3 text-white'>Please Login</h4>
                     <input name='email' className='input-field ps-3' type="email" placeholder='Email' required /><br />

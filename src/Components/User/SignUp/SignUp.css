@@ -1,8 +1,9 @@
-body {
-    background-color: black;
-}
+/* .body {
+    background-image: url(https://img.freepik.com/premium-vector/network-connection-background-abstract-style_23-2148875738.jpg);
+} */
 
 .signup-header {
+    background-color: black;
     border: 1px solid skyblue;
     width: 520px;
     border-radius: 4px;

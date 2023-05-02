@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css'
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Header = () => {
-    const logOut = () => {
 
+    const { logOut, user } = useContext(AuthContext)
+    const logOuthandler = () => {
+        logOut()
+            .then(result => { })
+            .catch(error => console.error(error));
     }
     return (
         <div className=''>
@@ -31,9 +36,13 @@ const Header = () => {
 
                         </ul>
                         <span className="navbar-text text-white">
-                            <Link to="signUp" className='hover btn bg-white me-3'>Sign In</Link>
-                            <Link to="logIn" className='hover btn bg-white me-3'>Login</Link>
-                            <Link onClick={logOut} className='hover btn bg-white'>Log Out</Link>
+
+
+                            {user ? <span className='d-flex'>
+                                <h4 className='text-white me-3'>{user.email}</h4>
+                                <Link onClick={logOuthandler} className='hover btn bg-white'>Log Out</Link>
+                            </span> : <span className='d-flex'> <Link to="signUp" className='hover btn bg-white me-3'>Sign up</Link>
+                                <Link to="logIn" className='hover btn bg-white me-3'>Login</Link></span>}
                         </span>
                     </div>
                 </div>
