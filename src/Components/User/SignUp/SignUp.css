@@ -17,3 +17,23 @@
     margin-bottom: 10px;
     border-radius: 5px;
 }
+
+.sign {
+    width: 50px;
+    height: 47px;
+    background-color: white;
+}
+
+.sign:hover {
+    background-color: white;
+}
+
+.signUpGoogle {
+    width: 250px;
+    border-radius: 4px;
+}
+
+.signUpGithub {
+    width: 250px;
+    border-radius: 4px;
+}

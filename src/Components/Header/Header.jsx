@@ -39,10 +39,13 @@ const Header = () => {
 
 
                             {user ? <span className='d-flex'>
-                                <h4 className='text-white me-3'>{user.email}</h4>
+                                <h4 className='text-white me-3'>{user.photoURL
+                                }</h4>
                                 <Link onClick={logOuthandler} className='hover btn bg-white'>Log Out</Link>
-                            </span> : <span className='d-flex'> <Link to="signUp" className='hover btn bg-white me-3'>Sign up</Link>
-                                <Link to="logIn" className='hover btn bg-white me-3'>Login</Link></span>}
+                            </span>
+                                : <span className='d-flex'>
+                                    <Link to="signUp" className='hover btn bg-white me-3'>Sign up</Link>
+                                    <Link to="logIn" className='hover btn bg-white me-3'>Login</Link></span>}
                         </span>
                     </div>
                 </div>
