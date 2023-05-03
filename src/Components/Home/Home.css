@@ -63,7 +63,7 @@
      color: #fff;
  }
 
- @media only screen and (max-width:672px) {
+ @media only screen and (max-width:1000px) {
      .text-box h1 {
          font-size: 100px;
          line-height: 60px;

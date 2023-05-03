@@ -3,8 +3,11 @@ import LazyLoad from 'react-lazy-load';
 import { Link } from 'react-router-dom';
 import './Chefs.css'
 
+
 const Chefs = ({ chefs }) => {
     const { experience, likes, name, numRecipes, picture, id } = chefs
+
+
     return (
         <div className='chefs-container mx-auto mb-4'>
 

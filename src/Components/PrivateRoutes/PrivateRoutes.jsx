@@ -6,8 +6,8 @@ const PrivateRoutes = ({ children }) => {
     const { user, loading } = useContext(AuthContext)
     const location = useLocation()
     if (loading) {
-        return <div className="d-flex justify-content-center">
-            <div className="spinner-border" role="status">
+        return <div className="d-flex  mt-5 justify-content-center">
+            <div className="spinner-border mt-5" role="status">
                 <span className="visually-hidden">Loading...</span>
             </div>
         </div>
