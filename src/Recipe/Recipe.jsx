@@ -2,11 +2,16 @@ import React from 'react';
 import './Recipe.css'
 import Rating from 'react-rating';
 import { FaRegStar, FaStar } from 'react-icons/fa';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Recipe = ({ recipe }) => {
     console.log(recipe)
     const { name, image, ingredients, cookingMethod, rating
     } = recipe
+    const favorite = () => {
+        toast('ok')
+    }
     return (
         <div className='d-flex recipe-container'>
             <div>
@@ -21,9 +26,11 @@ const Recipe = ({ recipe }) => {
                     placeholderSymbol={<FaStar></FaStar>}
                     fullSymbol={<FaStar></FaStar>}
                 >
-                </Rating> {rating}
+                </Rating> {rating} <br />
+                <button onClick={favorite} className='btn bg-black text-white mt-3'>Add Favorite</button>
 
             </div>
+            <ToastContainer />
         </div>
     );
 };

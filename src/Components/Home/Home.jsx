@@ -38,7 +38,7 @@ const Home = () => {
 
 
             {/* main section2 */}
-            {/* <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="https://i.ibb.co/tHy3Jfn/fotor-2023-5-2-23-43-35.png" class="d-block imag-slid" alt="..." />
@@ -56,7 +56,7 @@ const Home = () => {
                         <img src="https://i.ibb.co/bgvwTxw/fotor-2023-5-2-23-49-52.png" class="d-block imag-slid" alt="..." />
                     </div>
                 </div>
-            </div> */}
+            </div>
 
 
 

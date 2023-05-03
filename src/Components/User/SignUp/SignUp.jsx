@@ -8,7 +8,8 @@ const SignUp = () => {
     const [error, setError] = useState('')
     const [errorSign, setErrorSign] = useState('')
     const [show, setShow] = useState(false)
-    const { createUser, googleSignUp, githubSignUp } = useContext(AuthContext)
+    const { createUser, googleSignUp, githubSignUp, user } = useContext(AuthContext)
+    console.log(user)
     const signUpSubmitHandler = (e) => {
         e.preventDefault()
         const name = e.target.name.value;
