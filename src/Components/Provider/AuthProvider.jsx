@@ -37,6 +37,12 @@ const AuthProvider = ({ children }) => {
         setLoading(true)
         return signInWithPopup(auth, githubProvider)
     }
+    const updateUserProfile = (name, photoURL) => {
+        return updateProfile(auth.currentUser, {
+            displayName: name,
+            photoURL: photoURL
+        })
+    }
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser)
@@ -56,7 +62,8 @@ const AuthProvider = ({ children }) => {
         googleSignUp,
         githubSignUp,
         googleSignIn,
-        githubSignIn
+        githubSignIn,
+        updateUserProfile
     }
     return (
         <AuthContext.Provider value={users}>

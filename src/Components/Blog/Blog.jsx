@@ -2,8 +2,10 @@ import React from 'react';
 import './blog.css'
 
 const Blog = () => {
+
     return (
         <div className='container'>
+
             <h2 className='text-center text mt-5 mb-5'>Some Questions And Answer</h2>
             <div className='blog-container'>
 

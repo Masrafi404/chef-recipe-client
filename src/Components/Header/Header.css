@@ -10,3 +10,9 @@
 .header-container {
     margin-bottom: 100px;
 }
+
+.user-image {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50%;
+}

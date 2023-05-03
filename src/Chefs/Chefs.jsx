@@ -5,13 +5,12 @@ import './Chefs.css'
 
 const Chefs = ({ chefs }) => {
     const { experience, likes, name, numRecipes, picture, id } = chefs
-    console.log(experience)
     return (
         <div className='chefs-container mx-auto mb-4'>
 
             <div className="col">
                 <div className="card">
-                    <LazyLoad>
+                    <LazyLoad offset={100}>
                         <img className='lazy-img' src={picture} alt="..." />
                     </LazyLoad>
                     <div className="card-body">

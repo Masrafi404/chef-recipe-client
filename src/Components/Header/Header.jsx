@@ -44,8 +44,7 @@ const Header = () => {
 
 
                             {user ? <span className='d-flex'>
-                                <h4 className='text-white me-3'>{user.photoURL
-                                }</h4>
+                                <img className='user-image me-3 bg-white' src={user.photoURL} alt="" />
                                 <Link onClick={logOuthandler} className='hover btn bg-white'>Log Out</Link>
                             </span>
                                 : <span className='d-flex'>

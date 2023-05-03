@@ -5,7 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 const Login = () => {
     const navigate = useNavigate()
     const location = useLocation()
-    const from = location.state?.from?.path || '/'
+    const from = location.state?.from?.pathname || '/'
     const { logInUser, googleSignIn, githubSignIn } = useContext(AuthContext)
     const [error, setError] = useState('')
     const [show, setShow] = useState(false)
@@ -28,7 +28,7 @@ const Login = () => {
     const googleSignin = () => {
         googleSignIn()
             .then(result => {
-                navigate('/')
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 setError(error.message)
@@ -37,7 +37,7 @@ const Login = () => {
     const githubeSignin = () => {
         githubSignIn()
             .then(() => {
-                navigate('/')
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 setError(error.message)
@@ -63,7 +63,7 @@ const Login = () => {
                     } <br />
                     <span>
                         <div className="text-center">
-                            <input className='btn bg-white text-black mb-2 mt-3' type="submit" value="Login" /> <br />
+                            <input className='btn bg-white text-black mb-2 mt-0' type="submit" value="Login" /> <br />
                             <div className="d-flex ms-4">
                                 <p className='text-white ms-5 mb-5'>Kudil New? <Link to="/signUp">Create An Account</Link></p>
                             </div>

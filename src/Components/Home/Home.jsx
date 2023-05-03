@@ -19,7 +19,7 @@ const Home = () => {
             {/* main Header */}
             <div className='header-container'>
                 <div className='text-box ms-5'>
-                    <p>Welcome</p>
+                    <p className=''>Welcome</p>
                     <h1>KUDIL</h1>
                     <h3>YOU ARE RIGHT CHOICE TO YOUR SPECIAL PROGRAM</h3>
                     <Link className='btn explore-btn'>Explore More <FaArrowRight></FaArrowRight></Link>
@@ -39,25 +39,49 @@ const Home = () => {
 
 
             {/* main section2 */}
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="https://i.ibb.co/tHy3Jfn/fotor-2023-5-2-23-43-35.png" class="d-block imag-slid" alt="..." />
+
+            <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
+                <div className="carousel-inner">
+                    <div className="carousel-item active">
+                        <img src="https://i.ibb.co/tHy3Jfn/fotor-2023-5-2-23-43-35.png" className="d-block w-100" alt="..." />
                     </div>
-                    <div class="carousel-item">
-                        <img src="https://i.ibb.co/xgYT0Q3/fotor-2023-5-2-23-46-4.png" class="d-block imag-slid" alt="..." />
+                    <div className="carousel-item">
+                        <img src="https://i.ibb.co/xgYT0Q3/fotor-2023-5-2-23-46-4.png" className="d-block w-100" alt="..." />
                     </div>
-                    <div class="carousel-item">
-                        <img src="https://i.ibb.co/9WWj9fZ/fotor-2023-5-2-23-47-49.png" class="d-block imag-slid" alt="..." />
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://i.ibb.co/TMCmNJQ/fotor-2023-5-2-23-49-7.png" class="d-block imag-slid" alt="..." />
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://i.ibb.co/bgvwTxw/fotor-2023-5-2-23-49-52.png" class="d-block imag-slid" alt="..." />
+                    <div className="carousel-item">
+                        <img src="https://i.ibb.co/9WWj9fZ/fotor-2023-5-2-23-47-49.png" className="d-block w-100" alt="..." />
                     </div>
                 </div>
+                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span className="visually-hidden">Previous</span>
+                </button>
+                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span className="visually-hidden">Next</span>
+                </button>
             </div>
+
+
+            {/* <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
+                <div className="carousel-inner">
+                    <div className="carousel-item active">
+                        <img src="https://i.ibb.co/tHy3Jfn/fotor-2023-5-2-23-43-35.png" className="d-block imag-slid" alt="..." />
+                    </div>
+                    <div className="carousel-item">
+                        <img src="https://i.ibb.co/xgYT0Q3/fotor-2023-5-2-23-46-4.png" className="d-block imag-slid" alt="..." />
+                    </div>
+                    <div className="carousel-item">
+                        <img src="https://i.ibb.co/9WWj9fZ/fotor-2023-5-2-23-47-49.png" className="d-block imag-slid" alt="..." />
+                    </div>
+                    <div className="carousel-item">
+                        <img src="https://i.ibb.co/TMCmNJQ/fotor-2023-5-2-23-49-7.png" className="d-block imag-slid" alt="..." />
+                    </div>
+                    <div className="carousel-item">
+                        <img src="https://i.ibb.co/bgvwTxw/fotor-2023-5-2-23-49-52.png" className="d-block imag-slid" alt="..." />
+                    </div>
+                </div>
+            </div> */}
 
 
 

@@ -8,7 +8,8 @@ const SignUp = () => {
     const [error, setError] = useState('')
     const [errorSign, setErrorSign] = useState('')
     const [show, setShow] = useState(false)
-    const { createUser, googleSignUp, githubSignUp, user } = useContext(AuthContext)
+    const { createUser, googleSignUp, githubSignUp, user, updateUserProfile } = useContext(AuthContext)
+    console.log(updateUserProfile)
     console.log(user)
     const signUpSubmitHandler = (e) => {
         e.preventDefault()
@@ -16,7 +17,7 @@ const SignUp = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         const confirmPassword = e.target.confirmPassword.value;
-        const img = e.target.image.value
+        const photoURL = e.target.image.value
         if (password !== confirmPassword) {
             setError('Confirm Password does not match')
             return;
@@ -38,8 +39,10 @@ const SignUp = () => {
             return
         }
         createUser(email, password)
-            .then((signinUser) => {
-                const user = signinUser.user
+            .then((result) => {
+                updateUserProfile(name, photoURL)
+                const user = result.user
+                console.log(user)
                 e.target.reset()
                 navigate('/')
             })
@@ -71,6 +74,15 @@ const SignUp = () => {
                 setError(errorMessage)
             })
     }
+    // const updateUserProfil = (name, photourl) => {
+    //     updateUserProfile()
+    //         .then(result => {
+    //             console.log(result.user)
+    //         })
+    //         .catch(error => {
+    //             console.error(error)
+    //         })
+    // }
     return (
         <div className="body mb-5">
             <div className='mt-5 signup-container'>
