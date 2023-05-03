@@ -13,6 +13,8 @@ import SignUp from './Components/User/SignUp/SignUp.jsx';
 import Login from './Components/User/Login/Login.jsx';
 import AuthProvider from './Components/Provider/AuthProvider.jsx';
 import ErrorPage from './Components/ErrorPage/ErrorPage.jsx';
+import Recipes from './Recipes/Recipes.jsx';
+import Recipe from './Recipe/Recipe.jsx';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +47,14 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path: '/recipes/:id',
+    element: <Recipes></Recipes>
+  },
+  {
+    path: '*',
+    element: <ErrorPage></ErrorPage>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

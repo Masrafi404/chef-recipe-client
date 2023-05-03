@@ -1,0 +1,38 @@
+.img-recipe {
+    width: 120%;
+    height: 100%;
+}
+
+.info {
+    margin-left: 10%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.recipe-container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid skyblue;
+    margin-top: 50px;
+    border-radius: 2px;
+}
+
+@media only screen and (max-width:900px) {
+    .recipe-container {
+        flex-direction: column;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .info {
+        margin-left: 20px;
+        margin-top: 20px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .img-recipe {
+        width: 100%;
+        height: auto;
+    }
+}
