@@ -1,9 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.path || '/'
     const { logInUser, googleSignIn, githubSignIn } = useContext(AuthContext)
     const [error, setError] = useState('')
     const [show, setShow] = useState(false)
@@ -15,7 +17,7 @@ const Login = () => {
             .then((logIn) => {
                 const user = logIn.user
                 e.target.reset()
-                navigate('/')
+                navigate(from, { replace: true })
             })
             .catch((error) => {
                 const errorMassage = error.message

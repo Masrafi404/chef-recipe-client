@@ -15,6 +15,7 @@ import AuthProvider from './Components/Provider/AuthProvider.jsx';
 import ErrorPage from './Components/ErrorPage/ErrorPage.jsx';
 import Recipes from './Recipes/Recipes.jsx';
 import Recipe from './Recipe/Recipe.jsx';
+import PrivateRoutes from './Components/PrivateRoutes/PrivateRoutes.jsx';
 
 const router = createBrowserRouter([
   {
@@ -49,7 +50,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/recipes/:id',
-    element: <Recipes></Recipes>
+    element: <PrivateRoutes><Recipes></Recipes></PrivateRoutes>
   },
   {
     path: '*',

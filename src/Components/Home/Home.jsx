@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css'
-import { Link } from 'react-router-dom';
-import { FaArrowRight, FaFacebook, FaGem, FaGithub, FaGoogle, FaHome, FaInfo, FaInstagram, FaLinkedin, FaPhone, FaPrint, FaTwitter } from "react-icons/fa";
+import { Link, useNavigation } from 'react-router-dom';
+import { FaArrowRight } from "react-icons/fa";
 import Chefs from '../../Chefs/Chefs';
 import Footer from '../../Footer/Footer';
 
 const Home = () => {
+    const navigation = useNavigation()
     const [chefs, setChefs] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/chef')
+        fetch('http://localhost:5000/che')
             .then(res => res.json())
             .then(data => setChefs(data))
             .catch(error => console.error(error))
@@ -27,6 +28,20 @@ const Home = () => {
 
             {/* main section1 */}
             <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3 mx-4'>
+                {
+                    navigation.state === 'loading' ? <div class="d-flex justify-content-center">
+                        <div class="spinner-border" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div> : ""
+                }
+                {
+                    navigation.state === 'loading' ? <div class="d-flex justify-content-center">
+                        <div class="spinner-border" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div> : ""
+                }
                 {
                     chefs.map(chef => <Chefs
                         key={chef.id}
