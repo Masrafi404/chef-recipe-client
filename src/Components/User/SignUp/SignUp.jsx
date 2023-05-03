@@ -93,9 +93,10 @@ const SignUp = () => {
                         <input name='confirmPassword' className='input-field ps-3' type={show ? "text" : "password"} placeholder='Confirm Password' required /></div><br />
                     <div className="text-center">
                         <input name='image' className='input-field ps-3' type="text" placeholder=' image Url' required /></div> <br />
-                    {
-                        error && <small className='text-white'>{error}</small>
-                    } <br />
+                    <span className='ms-5'>
+                        {
+                            error && <small className='text-white ms-3'>{error}</small>
+                        } </span><br />
                     <div className="text-center">
                         <input className='btn bg-white text-black mt-2' type="submit" value="Register" />
 
@@ -103,9 +104,11 @@ const SignUp = () => {
                     <div className="d-flex ms-4">
                         <p className='text-white ms-5'>Already Account <Link to="/logIn">Login</Link></p>
                     </div>
-                    {
-                        errorSign && <small className='text-white'>{errorSign}</small>
-                    }
+                    <span className='ms-5'>
+                        {
+                            errorSign && <small className='text-white m-3'>{errorSign}</small>
+                        }
+                    </span>
 
                     <div onClick={googleSignInHandler} className='btn d-flex bg-white align-items-center mt-3 signUpGoogle mx-auto'>
                         <img className='sign ' src="https://cdn-icons-png.flaticon.com/512/2504/2504739.png" alt="" />

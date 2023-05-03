@@ -9,7 +9,7 @@ const Home = () => {
     const navigation = useNavigation()
     const [chefs, setChefs] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/che')
+        fetch('https://kudil-backend-server-masrafi404.vercel.app/chef')
             .then(res => res.json())
             .then(data => setChefs(data))
             .catch(error => console.error(error))
@@ -28,20 +28,6 @@ const Home = () => {
 
             {/* main section1 */}
             <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3 mx-4'>
-                {
-                    navigation.state === 'loading' ? <div class="d-flex justify-content-center">
-                        <div class="spinner-border" role="status">
-                            <span class="visually-hidden">Loading...</span>
-                        </div>
-                    </div> : ""
-                }
-                {
-                    navigation.state === 'loading' ? <div class="d-flex justify-content-center">
-                        <div class="spinner-border" role="status">
-                            <span class="visually-hidden">Loading...</span>
-                        </div>
-                    </div> : ""
-                }
                 {
                     chefs.map(chef => <Chefs
                         key={chef.id}

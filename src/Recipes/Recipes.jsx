@@ -8,7 +8,8 @@ const Recipes = () => {
     const { id } = useParams()
     const [chef, setChef] = useState({ recipes: [] })
     useEffect(() => {
-        fetch(`http://localhost:5000/chef/${id}`)
+
+        fetch(`https://kudil-backend-server-masrafi404.vercel.app/chef/${id}`)
             .then(res => res.json())
             .then(data => {
                 setChef(data)

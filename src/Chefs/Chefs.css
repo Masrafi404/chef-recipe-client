@@ -1,3 +1,7 @@
 .chefs-container {
     max-width: 600px;
 }
+
+.lazy-img {
+    max-width: 100% !important;
+}
