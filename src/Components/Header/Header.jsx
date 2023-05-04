@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import './Header.css'
 import { AuthContext } from '../Provider/AuthProvider';
 import ActiveLink from '../ActiveLink/ActiveLink';
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip'
+import { Tooltip as ReactTooltip } from 'react-tooltip'
 
 const Header = () => {
 
@@ -44,7 +47,7 @@ const Header = () => {
 
 
                             {user ? <span className='d-flex'>
-                                <img className='user-image me-3 bg-white' src={user.photoURL} alt="" />
+                                <img className='user-image me-3 ' title={user?.email} src={user?.photoURL} alt="" />
                                 <Link onClick={logOuthandler} className='hover btn bg-white'>Log Out</Link>
                             </span>
                                 : <span className='d-flex'>
