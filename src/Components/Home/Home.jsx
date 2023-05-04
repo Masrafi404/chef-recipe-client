@@ -1,39 +1,26 @@
 import React, { useContext, useEffect, useState } from 'react';
 import './Home.css'
-import { Link, useNavigation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FaArrowRight } from "react-icons/fa";
 import Chefs from '../../Chefs/Chefs';
 import Footer from '../../Footer/Footer';
 
 const Home = () => {
 
-    const navigation = useNavigation()
     const [chefs, setChefs] = useState([])
-    const [loading, setLoading] = useState(true)
     useEffect(() => {
-        setLoading(true)
         fetch('https://kudil-backend-server-masrafi404.vercel.app/chef')
             .then(res => res.json())
             .then(data => setChefs(data))
-        setLoading(false)
     }, [])
 
     return (
         <div className=''>
 
             {/* main Header */}
-            <div className=''>
-                {
-                    loading && <div className="d-flex  home-data-load justify-content-center">
-                        <div className="spinner-border text-warning mt-5" role="status">
-                            <span className="visually-hidden">Loading...</span>
-                        </div>
-                    </div>
-                }
-            </div>
             <div className='header-container'>
                 <div className='text-box ms-5 fixed-bottom'>
-                    <p className=''>Welcome</p>
+                    <p className='welcome'>Welcome</p>
                     <h1>KUDIL</h1>
                     <h3>YOU ARE RIGHT CHOICE TO YOUR SPECIAL PROGRAM</h3>
                     <Link className='btn explore-btn mb-5'>Explore More <FaArrowRight></FaArrowRight></Link>
@@ -60,7 +47,7 @@ const Home = () => {
             {/* main section2 */}
 
             <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
-                <h2 className='text-center mb-2'>Special </h2>
+                <h2 className='text-center mb-2'>Special Food</h2>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
                         <img src="https://i.ibb.co/tHy3Jfn/fotor-2023-5-2-23-43-35.png" className="d-block w-100" alt="..." />
