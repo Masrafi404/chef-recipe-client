@@ -72,7 +72,7 @@ const SignUp = () => {
             })
     }
     return (
-        <div className="body mb-5">
+        <div className="body mb-5 small-width">
             <div className='mt-5 signup-container'>
                 <form onSubmit={signUpSubmitHandler} className="signup-header">
                     <h4 className=' mt-5 mb-3 text-white text-center'>Please Register</h4>

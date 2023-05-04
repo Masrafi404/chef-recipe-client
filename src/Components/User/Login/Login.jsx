@@ -44,7 +44,7 @@ const Login = () => {
             })
     }
     return (
-        <div className='mt-5'>
+        <div className='mt-5 small-width'>
             <div className='body signup-container'>
                 <form onSubmit={loginSubmitHandler} className="signup-header">
                     <h4 className=' mt-5 mb-3 text-white text-center'>Please Login</h4>

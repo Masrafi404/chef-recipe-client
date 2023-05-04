@@ -43,3 +43,21 @@
     width: 230px;
     border-radius: 4px;
 }
+
+@media only screen and (max-width: 584px) {
+
+    .signup-header {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+
+    .input-field {
+        width: 90%;
+    }
+
+    .input-field-pass {
+        width: 90%;
+    }
+}
