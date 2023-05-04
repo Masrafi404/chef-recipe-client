@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom';
 import './Header.css'
 import { AuthContext } from '../Provider/AuthProvider';
 import ActiveLink from '../ActiveLink/ActiveLink';
-import 'react-tooltip/dist/react-tooltip.css'
-import { Tooltip } from 'react-tooltip'
-import { Tooltip as ReactTooltip } from 'react-tooltip'
-
 const Header = () => {
 
     const { logOut, user } = useContext(AuthContext)

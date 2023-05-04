@@ -42,9 +42,8 @@ const Home = () => {
             <div>
 
 
-                <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3 mx-4 mt-5'>
-
-
+                <h3 className='text-center mt-5 mb2'>Chef List</h3>
+                <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3 mx-4'>
 
                     {
                         chefs.map(chef => <Chefs
@@ -53,13 +52,12 @@ const Home = () => {
                         ></Chefs>)
                     }
                 </div>
-
             </div>
 
             {/* main section2 */}
 
             <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
-                <h2 className='text-center mb-2'>Special Recipes</h2>
+                <h2 className='text-center mb-2'>Special Food</h2>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
                         <img src="https://i.ibb.co/tHy3Jfn/fotor-2023-5-2-23-43-35.png" className="d-block w-100" alt="..." />

@@ -1,3 +1,4 @@
+import moment from 'moment/moment';
 import React from 'react';
 import { FaFacebook, FaGem, FaGithub, FaGoogle, FaHome, FaInfo, FaInstagram, FaLinkedin, FaPhone, FaPrint, FaTwitter } from "react-icons/fa";
 import { Link } from 'react-router-dom';
@@ -108,7 +109,9 @@ const Footer = () => {
                 </section>
 
                 <div className="text-center p-4 text-white">
-                    © 2021 Copyright : <span><Link className='uses' to="/">KUDIL</Link></span>
+                    © {
+                        moment().format('yyyy')
+                    }  Copyright : <span><Link className='uses' to="/">KUDIL</Link></span>
                 </div>
 
             </footer>

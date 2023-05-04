@@ -9,7 +9,7 @@ const Recipe = ({ recipe }) => {
     const [db, setDb] = useState(false)
     const { name, image, ingredients, cookingMethod, rating } = recipe
     const favorite = () => {
-        toast.success('Your Favorite Recipe added!', {
+        toast.success('Your Favorite Recipe added', {
             position: toast.POSITION.TOP_CENTER
         })
         setDb(!db)
@@ -17,12 +17,17 @@ const Recipe = ({ recipe }) => {
     return (
         <div className='d-flex recipe-container'>
             <div>
-                <img className='img-recipe' src={image} alt="" />
+                <img className='img-recipe me-5' src={image} alt="" />
             </div>
             <div className=' info'>
                 <h3>Recipe Name: {name}</h3>
-                <h4>ingredient: {ingredients}</h4>
-                <h4>cookingMethod: {cookingMethod}</h4>
+                <h6 className='mt-1 mb-1'>Ingredients:</h6>
+                <li>{ingredients?.[0]}</li>
+                <li>{ingredients?.[1]}</li>
+                <li>{ingredients?.[2]}</li>
+                <li>{ingredients?.[3]}</li>
+                <li>{ingredients?.[4]}</li>
+                <h5>cookingMethod: {cookingMethod}</h5>
                 <Rating placeholderRating={rating}
                     emptySymbol={<FaRegStar></FaRegStar>}
                     placeholderSymbol={<FaStar></FaStar>}

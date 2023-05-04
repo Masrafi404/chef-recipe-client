@@ -5,8 +5,25 @@
 }
 
 .chef-container2 {
-    display: flex !important;
+    display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: space-around;
+}
+
+@media only screen and (max-width: 1066px) {
+    .chef-container2 {
+        flex-direction: column-reverse;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+
+    .chef-container2 img {
+        width: 100% !important;
+    }
+
+    .chef-info2 {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
 }
