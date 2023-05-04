@@ -50,7 +50,8 @@ const router = createBrowserRouter([
   },
   {
     path: '/recipes/:id',
-    element: <PrivateRoutes><Recipes></Recipes></PrivateRoutes>
+    element: <PrivateRoutes><Recipes></Recipes></PrivateRoutes>,
+    loader: ({ params }) => fetch(`https://kudil-backend-server-masrafi404.vercel.app/chef/${params.id}`)
   },
   {
     path: '*',

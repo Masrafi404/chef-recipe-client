@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useRef } from "react";
 import './blog.css'
+import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
 
 const Blog = () => {
+    const pdfRef = useRef();
 
+    const handleDownload = () => {
+        pdfRef.current.download = "my-document.pdf";
+    }
     return (
         <div className='container'>
 
@@ -83,6 +88,12 @@ const Blog = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div>
+                    <button onClick={handleDownload}>Download PDF</button>
+
+
                 </div>
                 <img src="https://img.freepik.com/free-vector/faqs-concept-illustration_114360-5185.jpg" alt="" />
             </div>

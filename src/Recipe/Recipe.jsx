@@ -7,11 +7,11 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Recipe = ({ recipe }) => {
     const [db, setDb] = useState(false)
-    console.log(recipe)
-    const { name, image, ingredients, cookingMethod, rating
-    } = recipe
+    const { name, image, ingredients, cookingMethod, rating } = recipe
     const favorite = () => {
-        toast('Favorite added')
+        toast.success('Your Favorite Recipe added!', {
+            position: toast.POSITION.TOP_CENTER
+        })
         setDb(!db)
     }
     return (
@@ -29,7 +29,7 @@ const Recipe = ({ recipe }) => {
                     fullSymbol={<FaStar></FaStar>}
                 >
                 </Rating> {rating} <br />
-                <button onClick={favorite} className={db === true ? "d-none" : "btn bg-black text-white mt-3 "}>Add Favorite</button>
+                <button onClick={favorite} className={db === true ? "btn disabled mt-3" : "btn bg-black text-white mt-3 "}>Add Favorite</button>
 
             </div>
             <ToastContainer />

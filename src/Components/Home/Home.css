@@ -8,7 +8,7 @@
 
  .header-container {
      width: 100%;
-     height: 100vh;
+     height: 80vh;
      background-image: linear-gradient(rgba(0, 0, 0, 0.3), transparent), url(https://i.pinimg.com/736x/fa/e9/aa/fae9aa88452a6d1c1459526098ee13dc.jpg);
      background-repeat: no-repeat;
      background-size: cover;
@@ -61,6 +61,23 @@
  .uses {
      text-decoration: none;
      color: #fff;
+ }
+
+ .home-data-load {
+     width: 200px !important;
+     height: 200px !important;
+     /* padding-top: 50px;
+     padding-bottom: 50px; */
+     margin-left: auto;
+     margin-right: auto;
+     /* margin-top: 33%;
+     color: black; */
+ }
+
+ .img-our {
+     width: 100%;
+     height: 200px;
+     border-radius: 6px;
  }
 
  @media only screen and (max-width:1000px) {
