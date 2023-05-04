@@ -57,7 +57,7 @@ const Home = () => {
             {/* main section2 */}
 
             <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
-                <h2 className='text-center mb-2'>Special Food</h2>
+                <h2 className='text-center mb-2'>Special </h2>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
                         <img src="https://i.ibb.co/tHy3Jfn/fotor-2023-5-2-23-43-35.png" className="d-block w-100" alt="..." />

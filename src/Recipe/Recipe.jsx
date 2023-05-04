@@ -32,6 +32,7 @@ const Recipe = ({ recipe }) => {
                     emptySymbol={<FaRegStar></FaRegStar>}
                     placeholderSymbol={<FaStar></FaStar>}
                     fullSymbol={<FaStar></FaStar>}
+                    readonly={true}
                 >
                 </Rating> {rating} <br />
                 <button onClick={favorite} className={db === true ? "btn disabled mt-3" : "btn bg-black text-white mt-3 "}>Add Favorite</button>

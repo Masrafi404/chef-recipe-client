@@ -1,15 +1,26 @@
-import React, { useRef } from "react";
+import React, { useRef } from 'react';
+import { useReactToPrint } from 'react-to-print';
 import './blog.css'
 
-const Blog = () => {
 
+const Blog = () => {
+    const componentRef = useRef();
+
+    const handlePrint = useReactToPrint({
+        content: () => componentRef.current,
+    });
+
+    const handleClick = () => {
+        handlePrint();
+    }
     return (
         <div className='container'>
 
             <h2 className='text-center text mt-5 mb-5'>Some Questions And Answer</h2>
+            <button className='btn bg-black text-white mb-3' onClick={handleClick}>Download Now</button>
             <div className='blog-container'>
 
-                <div className="accordion" id="accordionExample">
+                <div ref={componentRef} className="accordion" id="accordionExample">
                     <div className="accordion-item">
                         <h2 className="accordion-header">
                             <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">

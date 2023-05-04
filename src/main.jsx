@@ -28,23 +28,23 @@ const router = createBrowserRouter([
       },
       {
         path: '/blog',
-        element: <Blog></Blog>
+        element: <Blog></Blog>,
+        errorElement: <ErrorPage></ErrorPage>
       },
       {
         path: '/contact',
-        element: <Contact></Contact>
+        element: <Contact></Contact>,
+        errorElement: <ErrorPage></ErrorPage>
       },
       {
         path: '/signUp',
-        element: <SignUp></SignUp>
+        element: <SignUp></SignUp>,
+        errorElement: <ErrorPage></ErrorPage>
       },
       {
         path: '/logIn',
-        element: <Login></Login>
-      },
-      {
-        path: '*',
-        element: <ErrorPage></ErrorPage>
+        element: <Login></Login>,
+        errorElement: <ErrorPage></ErrorPage>
       }
     ]
   },
@@ -52,10 +52,6 @@ const router = createBrowserRouter([
     path: '/recipes/:id',
     element: <PrivateRoutes><Recipes></Recipes></PrivateRoutes>,
     loader: ({ params }) => fetch(`https://kudil-backend-server-masrafi404.vercel.app/chef/${params.id}`)
-  },
-  {
-    path: '*',
-    element: <ErrorPage></ErrorPage>
   }
 ]);
 
