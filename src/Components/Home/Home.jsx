@@ -22,13 +22,15 @@ const Home = () => {
         <div className=''>
 
             {/* main Header */}
-            {
-                loading && <div className="d-flex  home-data-load justify-content-center">
-                    <div className="spinner-border text-warning mt-5" role="status">
-                        <span className="visually-hidden">Loading...</span>
+            <div className=''>
+                {
+                    loading && <div className="d-flex  home-data-load justify-content-center">
+                        <div className="spinner-border text-warning mt-5" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </div>
                     </div>
-                </div>
-            }
+                }
+            </div>
             <div className='header-container'>
                 <div className='text-box ms-5 fixed-bottom'>
                     <p className=''>Welcome</p>
@@ -43,6 +45,7 @@ const Home = () => {
 
 
                 <h3 className='text-center mt-5 mb2'>Chef List</h3>
+
                 <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3 mx-4'>
 
                     {
