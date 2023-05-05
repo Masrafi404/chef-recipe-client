@@ -92,7 +92,8 @@ const SignUp = () => {
                     <div className="text-center">
                         <input name='confirmPassword' className='input-field ps-3' type={show ? "text" : "password"} placeholder='Confirm Password' required /></div><br />
                     <div className="text-center">
-                        <input name='image' className='input-field ps-3' type="text" placeholder=' image Url' required /></div> <br />
+                        <input name='image' className='input-field ps-3' type="text" placeholder='image Url'
+                            required /></div> <br />
                     <span className='ms-5'>
                         {
                             error && <small className='text-white ms-3'>{error}</small>
