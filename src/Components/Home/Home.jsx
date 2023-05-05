@@ -32,6 +32,10 @@ const Home = () => {
             </div>
 
             {/* main section1 */}
+
+
+
+
             {
                 !loading ? (<div>
                     <h3 className='text-center mt-5 mb2'>Chef List</h3>
