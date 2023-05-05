@@ -44,10 +44,9 @@ const Home = () => {
                     </div>
                 </div>) : (<div class="d-flex mt-2 justify-content-center"> <div class="spinner-border text-warning" role="status"> <span class="visually-hidden">Loading...</span> </div> </div>)
             }
-            {/* <div class="d-flex justify-content-center"> <div class="spinner-border text-warning" role="status"> <span class="visually-hidden">Loading...</span> </div> </div> */}
             {/* main section2 */}
 
-            {/* <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
+            <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
                 <h2 className='text-center mb-2'>Special Food</h2>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
@@ -74,10 +73,10 @@ const Home = () => {
                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Next</span>
                 </button>
-            </div> */}
+            </div>
 
             {/* our service */}
-            {/* <div className="row ms-3 me-3">
+            <div className="row ms-3 me-3">
                 <h3 className='text-center mt-5'>Our Service</h3>
                 <div className="col-sm-3 mb-3 mb-sm-6">
                     <div className="card">
@@ -107,9 +106,9 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-            </div> */}
+            </div>
             {/* Footer */}
-            {/* <Footer></Footer> */}
+            <Footer></Footer>
 
         </div>
     );

@@ -1,26 +1,32 @@
-import React, { useRef } from 'react';
-import { useReactToPrint } from 'react-to-print';
+import React from 'react';
 import './blog.css'
 
 
+const PDF_FILE_URL = 'https://assaignment-10-52366.web.app/blog/file_pdf.pdf'
 const Blog = () => {
-    const componentRef = useRef();
 
-    const handlePrint = useReactToPrint({
-        content: () => componentRef.current,
-    });
-
-    const handleClick = () => {
-        handlePrint();
+    const handleClick = (url) => {
+        fetch(url).then(response => response.blob()).then(blob => {
+            const blobURL = window.URL.createObjectURL(new Blob([blob]))
+            const fileName = url.split('/').pop()
+            const aTag = document.createElement('a')
+            aTag.href = blobURL;
+            aTag.setAttribute('download', fileName)
+            document.body.appendChild(aTag)
+            aTag.click();
+            aTag.remove();
+        })
     }
+
+
     return (
         <div className='container'>
 
             <h2 className='text-center text mt-5 mb-5'>Some Questions And Answer</h2>
-            <button className='btn bg-black text-white mb-3' onClick={handleClick}>Download Now</button>
+            <button className='btn bg-black text-white mb-3' onClick={() => { handleClick(PDF_FILE_URL) }}>Download PDF</button>
             <div className='blog-container'>
 
-                <div ref={componentRef} className="accordion" id="accordionExample">
+                <div className="accordion" id="accordionExample">
                     <div className="accordion-item">
                         <h2 className="accordion-header">
                             <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
