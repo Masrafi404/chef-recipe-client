@@ -1,29 +1,13 @@
 import React from 'react';
 import './blog.css'
 
-
-const PDF_FILE_URL = 'https://assaignment-10-52366.web.app/blog/file_pdf.pdf'
 const Blog = () => {
-
-    const handleClick = (url) => {
-        fetch(url).then(response => response.blob()).then(blob => {
-            const blobURL = window.URL.createObjectURL(new Blob([blob]))
-            const fileName = url.split('/').pop()
-            const aTag = document.createElement('a')
-            aTag.href = blobURL;
-            aTag.setAttribute('download', fileName)
-            document.body.appendChild(aTag)
-            aTag.click();
-            aTag.remove();
-        })
-    }
 
 
     return (
-        <div className='container'>
+        <div className='container actual-receipt'>
 
             <h2 className='text-center text mt-5 mb-5'>Some Questions And Answer</h2>
-            <button className='btn bg-black text-white mb-3' onClick={() => { handleClick(PDF_FILE_URL) }}>Download PDF</button>
             <div className='blog-container'>
 
                 <div className="accordion" id="accordionExample">
