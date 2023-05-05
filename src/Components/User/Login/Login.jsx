@@ -44,7 +44,7 @@ const Login = () => {
             })
     }
     return (
-        <div className='mt-5 small-width'>
+        <div className='mt-5'>
             <div className='body signup-container'>
                 <form onSubmit={loginSubmitHandler} className="signup-header">
                     <h4 className=' mt-5 mb-3 text-white text-center'>Please Login</h4>
@@ -65,7 +65,7 @@ const Login = () => {
                         <div className="text-center">
                             <input className='btn bg-white text-black mb-2 mt-0' type="submit" value="Login" /> <br />
                             <div className="d-flex ms-4">
-                                <p className='text-white ms-5 mb-5'>Kudil New? <Link to="/signUp">Create An Account</Link></p>
+                                <p className='text-white md:ms-5 lg:ms-5 xl:ms-5 lg:ms-0 mb-5'>Kudil New? <Link className='me-2' to="/signUp">Create An Account</Link></p>
                             </div>
                         </div>
                         <div onClick={googleSignin} className='btn d-flex bg-white align-items-center signUpGoogle mx-auto'>

@@ -6,12 +6,13 @@ import Chefs from '../../Chefs/Chefs';
 import Footer from '../../Footer/Footer';
 
 const Home = () => {
-
-    const [chefs, setChefs] = useState([])
+    const [chefs, setChefs] = useState(null)
+    const [loading, setLoading] = useState(false)
     useEffect(() => {
         fetch('https://kudil-backend-server-masrafi404.vercel.app/chef')
             .then(res => res.json())
             .then(data => setChefs(data))
+        setLoading(true)
     }, [])
 
     return (
@@ -28,25 +29,25 @@ const Home = () => {
             </div>
 
             {/* main section1 */}
-            <div>
-
-
-                <h3 className='text-center mt-5 mb2'>Chef List</h3>
-
-                <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3 mx-4'>
-
-                    {
-                        chefs.map(chef => <Chefs
-                            key={chef.id}
-                            chefs={chef}
-                        ></Chefs>)
-                    }
-                </div>
-            </div>
-
+            {
+                loading ? (<div>
+                    <h3 className='text-center mt-5 mb2'>Chef List</h3>
+                    <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3 mx-4'>
+                        {
+                            chefs?.map(chef => <Chefs
+                                key={chef.id}
+                                chefs={chef}
+                            ></Chefs>)
+                        }
+                        <div>
+                        </div>
+                    </div>
+                </div>) : (<div class="d-flex mt-2 justify-content-center"> <div class="spinner-border text-warning" role="status"> <span class="visually-hidden">Loading...</span> </div> </div>)
+            }
+            {/* <div class="d-flex justify-content-center"> <div class="spinner-border text-warning" role="status"> <span class="visually-hidden">Loading...</span> </div> </div> */}
             {/* main section2 */}
 
-            <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
+            {/* <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
                 <h2 className='text-center mb-2'>Special Food</h2>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
@@ -73,10 +74,10 @@ const Home = () => {
                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Next</span>
                 </button>
-            </div>
+            </div> */}
 
             {/* our service */}
-            <div className="row ms-3 me-3">
+            {/* <div className="row ms-3 me-3">
                 <h3 className='text-center mt-5'>Our Service</h3>
                 <div className="col-sm-3 mb-3 mb-sm-6">
                     <div className="card">
@@ -106,13 +107,9 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-
-
-
-
+            </div> */}
             {/* Footer */}
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
 
         </div>
     );

@@ -11,7 +11,6 @@ const Chefs = ({ chefs }) => {
     return (
         <div>
             <div className='chefs-container mx-auto mb-4'>
-
                 <div className="col">
                     <div className="card">
                         <LazyLoad offset={100} threshold={0.95}>

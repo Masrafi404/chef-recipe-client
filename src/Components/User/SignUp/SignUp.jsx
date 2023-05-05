@@ -72,7 +72,7 @@ const SignUp = () => {
             })
     }
     return (
-        <div className="body mb-5 small-width">
+        <div className="body mb-5">
             <div className='mt-5 signup-container'>
                 <form onSubmit={signUpSubmitHandler} className="signup-header">
                     <h4 className=' mt-5 mb-3 text-white text-center'>Please Register</h4>
@@ -102,7 +102,7 @@ const SignUp = () => {
 
                     </div><br />
                     <div className="d-flex ms-4">
-                        <p className='text-white ms-5'>Already Account <Link to="/logIn">Login</Link></p>
+                        <p className='text-white ms-5 me-3'>Already Account <Link to="/logIn">Login</Link></p>
                     </div>
                     <span className='ms-5'>
                         {

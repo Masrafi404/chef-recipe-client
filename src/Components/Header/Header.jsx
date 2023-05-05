@@ -28,9 +28,6 @@ const Header = () => {
                             <li className="nav-item">
                                 <ActiveLink className="" to="/">Home</ActiveLink>
                             </li>
-                            {/* <li className="nav-item">
-                                <ActiveLink className="" to="/recipe">Recipe</ActiveLink>
-                            </li> */}
                             <li className="nav-item">
                                 <ActiveLink className="" to="/blog">Blog</ActiveLink>
                             </li>
