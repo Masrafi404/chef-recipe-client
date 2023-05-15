@@ -9,7 +9,7 @@ const Recipe = ({ recipe }) => {
     const [db, setDb] = useState(false)
     const { name, image, ingredients, cookingMethod, rating } = recipe
     const favorite = () => {
-        toast.success('Your Favorite Recipe added', {
+        toast.success(`Your Favorite Recipe ${name} added`, {
             position: toast.POSITION.TOP_CENTER
         })
         setDb(!db)
